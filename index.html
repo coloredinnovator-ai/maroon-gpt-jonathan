@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maroon GPT - Jonathan Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="api-key-modal" class="modal">
+        <div class="modal-content glass-panel">
+            <h2>Welcome to Maroon GPT <span class="badge">gemini-1.5-flash</span></h2>
+            <p>Please enter your Google AI Studio API Key to continue.</p>
+            <input type="password" id="api-key-input" placeholder="AIzaSy...">
+            <button id="save-key-btn">Secure Login</button>
+            <p class="subtext">Your key is stored securely in your local browser only.</p>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <header class="glass-header">
+            <div class="logo">
+                <span class="logo-dot"></span>
+                <h1>Maroon GPT</h1>
+            </div>
+            <div class="header-tags">
+                <span class="tag">Edition: Jonathan</span>
+                <button id="clear-key-btn" class="icon-btn">Logout</button>
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <div id="chat-history" class="chat-history">
+                <div class="message ai-message glass-message">
+                    <p>Hello Jonathan! I am Maroon GPT, powered by Google's Gemini 1.5 Flash. How can I help you today?</p>
+                </div>
+            </div>
+            
+            <div class="typing-indicator hidden" id="typing-indicator">
+                <span></span><span></span><span></span>
+            </div>
+        </main>
+
+        <footer class="input-area glass-footer">
+            <form id="chat-form">
+                <textarea id="prompt-input" rows="1" placeholder="Type a message..." required></textarea>
+                <button type="submit" id="send-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+            </form>
+        </footer>
+    </div>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "@google/generative-ai": "https://esm.run/@google/generative-ai"
+      }
+    }
+    </script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>
